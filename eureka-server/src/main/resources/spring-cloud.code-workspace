@@ -1,0 +1,39 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../msvc-products"
+		},
+		{
+			"path": "../../../../msvc-items"
+		},
+		{
+			"path": "../../../../msvc-gateway-server"
+		},
+		{
+			"name": "config-server",
+			"path": "../../../../config-server"
+		},
+		{
+			"path": "../../../../config"
+		},
+		{
+			"name": "libs-msvc-commons",
+			"path": "../../../../libs-msvc-commons"
+		},
+		{
+			"name": "msvc-users",
+			"path": "../../../../msvc-users"
+		},
+		{
+			"name": "msvc-oauth",
+			"path": "../../../../msvc-oauth"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive",
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}
