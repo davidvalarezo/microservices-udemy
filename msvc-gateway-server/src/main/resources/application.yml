@@ -68,12 +68,12 @@ spring:
             # - Cookie=color, azul
             # - Header=Content-Type, application/json
             filters:
-              - name: CircuitBreaker
-                args: 
-                  name: products
-                  statusCodes: 500, 404
-                  fallbackUri: forward:/api/items/5
-              - StripPrefix=2
+            #   - name: CircuitBreaker
+            #     args: 
+            #       name: products
+            #       statusCodes: 500, 404
+            #       fallbackUri: forward:/api/items/5
+             - StripPrefix=2
               # - SampleCookie= "This is a sample cookie added in the gateway", user, dvalarez
           - id: msvc-items
             uri: lb://msvc-items

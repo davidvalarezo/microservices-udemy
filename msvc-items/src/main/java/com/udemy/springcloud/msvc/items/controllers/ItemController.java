@@ -50,7 +50,7 @@ public class ItemController {
 
     @Autowired
     private Environment env;
-
+    //itemServiceWebClient
     public ItemController(@Qualifier("itemServiceFeign") ItemService service,
         CircuitBreakerFactory cbFactory
         ) {
@@ -77,8 +77,9 @@ public class ItemController {
     @GetMapping
     public List<Item> list(@RequestParam(name="name", required = false) String name, 
             @RequestHeader(name="token-request", required = false) String token) {
-                System.out.println(name);
-                System.out.println(token);
+                logger.info("Entering list method in ItemController");
+                logger.info("Token: {}", token);
+                logger.info("Resquet Parameter: {}", name);
         return itemService.findAll();
     }
 
@@ -162,20 +163,21 @@ public class ItemController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Product create(@RequestBody Product product) {
-        
+        logger.info("Creating product: {}", product.getName());
         return itemService.save(product);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PutMapping("/{id}")
     public Product putMethodName(@PathVariable Long id, @RequestBody Product product) {
-   
+        logger.info("Updating product: {}", product.getName());
         return itemService.update(product, id);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
+        logger.info("Delete product id: {}", id);
         itemService.deleteById(id);
     }
 
